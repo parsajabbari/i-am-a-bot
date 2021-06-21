@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8" />
         <title>I Am a Bot</title>
-        <script src="https://www.google.com/recaptcha/enterprise.js"></script>
+        <script src="https://www.google.com/recaptcha/enterprise.js" async defer></script>
         <!-- <script>
             grecaptcha.enterprise.ready(function() {
                 grecaptcha.enterprise.execute('6LfWqkobAAAAAJAI5EquhODK_dnISKjFSAvaRRZu', {action: 'homepage'}).then(function(token) {
@@ -20,17 +20,22 @@
        function clicked() {
            alert("clicked!")
        }
+
+       function tokenGenerated(token) {
+           alert("recaptcha complted!")
+           console.log('recaptcha generated token:', token);
+       }
             </script>
     </head>
     <body>
-        <h1>google template</h1>
+        <h1>fake</h1>
         <!-- <div class="g-recaptcha" data-sitekey="6LfWqkobAAAAAJAI5EquhODK_dnISKjFSAvaRRZu"></div>
           <br/>
         <button onclick="clicked()">Submit!</button> -->
-        <form action="" method="POST">
-            <div class="g-recaptcha" data-sitekey="6LfWqkobAAAAAJAI5EquhODK_dnISKjFSAvaRRZu"></div>
+        
+            <div class="g-recaptcha" data-sitekey="6LfWqkobAAAAAJAI5EquhODK_dnISKjFSAvaRRZu" data-callback="tokenGenerated"></div>
             <br/>
-            <input type="submit" value="Submit">
-          </form>
+            <input type="submit" onclick="tokenGenerated('asdf')" value="Submit">
+         
     </body>
 </html>
