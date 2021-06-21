@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8" />
         <title>I Am a Bot</title>
-        <script src="https://www.google.com/recaptcha/enterprise.js?render=6Le6UUYbAAAAAPVz28NcYv_LrBJYpB2bqpbPA1sT"></script>
+        <script src="https://www.google.com/recaptcha/enterprise.js" async defer></script>
         <script>
             grecaptcha.enterprise.ready(function() {
                 grecaptcha.enterprise.execute('6Le6UUYbAAAAAPVz28NcYv_LrBJYpB2bqpbPA1sT', {action: 'homepage'}).then(function(token) {
@@ -16,13 +16,16 @@
                 alert("submitted!")
                 console.log('button token:', token)
        }
+
+       function clicked() {
+           alert("clicked!")
+       }
             </script>
     </head>
     <body>
         <h1>yay</h1>
-        <button class="g-recaptcha"
-        data-sitekey="6Le6UUYbAAAAAPVz28NcYv_LrBJYpB2bqpbPA1sT"
-        data-callback='onSubmit'
-        data-action='submit'>Submit</button>
+        <div class="g-recaptcha" data-sitekey="6Le6UUYbAAAAAPVz28NcYv_LrBJYpB2bqpbPA1sT"></div>
+          <br/>
+        <button onclick="clicked">Submit!</button>
     </body>
 </html>
