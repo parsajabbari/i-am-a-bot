@@ -4,13 +4,13 @@
         <meta charset="utf-8" />
         <title>I Am a Bot</title>
         <script src="https://www.google.com/recaptcha/enterprise.js"></script>
-        <script>
+        <!-- <script>
             grecaptcha.enterprise.ready(function() {
                 grecaptcha.enterprise.execute('6LfWqkobAAAAAJAI5EquhODK_dnISKjFSAvaRRZu', {action: 'homepage'}).then(function(token) {
                    console.log('homepage token', token);
                 });
             });
-            </script>
+            </script> -->
             <script>
                 function onSubmit(token) {
                 alert("submitted!")
@@ -23,9 +23,14 @@
             </script>
     </head>
     <body>
-        <h1>clicked()</h1>
-        <div class="g-recaptcha" data-sitekey="6LfWqkobAAAAAJAI5EquhODK_dnISKjFSAvaRRZu"></div>
+        <h1>google template</h1>
+        <!-- <div class="g-recaptcha" data-sitekey="6LfWqkobAAAAAJAI5EquhODK_dnISKjFSAvaRRZu"></div>
           <br/>
-        <button onclick="clicked()">Submit!</button>
+        <button onclick="clicked()">Submit!</button> -->
+        <form action="" method="POST">
+            <div class="g-recaptcha" data-sitekey="6LfWqkobAAAAAJAI5EquhODK_dnISKjFSAvaRRZu"></div>
+            <br/>
+            <input type="submit" value="Submit">
+          </form>
     </body>
 </html>
