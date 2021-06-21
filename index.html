@@ -7,12 +7,21 @@
         <script>
             grecaptcha.enterprise.ready(function() {
                 grecaptcha.enterprise.execute('6Le6UUYbAAAAAPVz28NcYv_LrBJYpB2bqpbPA1sT', {action: 'homepage'}).then(function(token) {
-                   console.log('token', token);
+                   console.log('homepage token', token);
                 });
             });
+            </script>
+            <script>
+                const onSubmit = () => {
+                    console.log('submitted')
+                }
             </script>
     </head>
     <body>
         <h1>Sanity check</h1>
+        <button class="g-recaptcha"
+        data-sitekey="6Le6UUYbAAAAAPVz28NcYv_LrBJYpB2bqpbPA1sT"
+        data-callback='onSubmit'
+        data-action='submit'>Submit</button>
     </body>
 </html>
