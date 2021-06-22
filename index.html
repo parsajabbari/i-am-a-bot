@@ -3,6 +3,8 @@
     <head>
         <meta charset="utf-8" />
         <title>I Am a Bot</title>
+        
+        <script src="https://www.google.com/recaptcha/enterprise.js?onload=onloadCallback&render=explicit" async defer></script>
         <script>
             // make sure this still works if i move it after the load of the library
             function onloadCallback() {
@@ -10,7 +12,6 @@
                 grecaptcha.enterprise.render('recaptcha', {'sitekey': '6LfWqkobAAAAAJAI5EquhODK_dnISKjFSAvaRRZu'})
             }
         </script>
-        <script src="https://www.google.com/recaptcha/enterprise.js?onload=onloadCallback&render=explicit" async defer></script>
         <!-- <script>
             grecaptcha.enterprise.ready(function() {
                 grecaptcha.enterprise.execute('6LfWqkobAAAAAJAI5EquhODK_dnISKjFSAvaRRZu', {action: 'homepage'}).then(function(token) {
@@ -35,7 +36,7 @@
             </script>
     </head>
     <body>
-        <h1>explicit rendering</h1>
+        <h1>switcharoo</h1>
         <!-- <div class="g-recaptcha" data-sitekey="6LfWqkobAAAAAJAI5EquhODK_dnISKjFSAvaRRZu"></div>
           <br/>
         <button onclick="clicked()">Submit!</button> -->
