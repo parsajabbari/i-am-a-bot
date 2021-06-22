@@ -6,10 +6,13 @@
         
         <script src="https://www.google.com/recaptcha/enterprise.js?onload=onloadCallback&render=explicit" async defer></script>
         <script>
+            var ready = false;
+            var recaptcha;
             // make sure this still works if i move it after the load of the library
             function onloadCallback() {
                 alert("onloadCallback")
-                grecaptcha.enterprise.render('recaptcha', {'sitekey': '6LfWqkobAAAAAJAI5EquhODK_dnISKjFSAvaRRZu'})
+                //ready = true;
+                recaptcha = grecaptcha.enterprise.render('recaptcha', {'sitekey': '6LfWqkobAAAAAJAI5EquhODK_dnISKjFSAvaRRZu'})
             }
         </script>
         <!-- <script>
@@ -32,11 +35,13 @@
        function tokenGenerated(token) {
            alert("recaptcha complted!")
            console.log('recaptcha generated token:', token);
+           console.log('resetting captcha')
+           grecaptcha.enterprise.reset(recaptcha);
        }
             </script>
     </head>
     <body>
-        <h1>did it work?</h1>
+        <h1>reset</h1>
         <!-- <div class="g-recaptcha" data-sitekey="6LfWqkobAAAAAJAI5EquhODK_dnISKjFSAvaRRZu"></div>
           <br/>
         <button onclick="clicked()">Submit!</button> -->
